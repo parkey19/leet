@@ -12,14 +12,18 @@ public class RemoveArray {
         RemoveArray removeArray = new RemoveArray();
         int[] arrn = {1,2,2};
         System.out.println(removeArray.removeDuplicates(arrn));
+
+        System.out.println(arrn);
+        for (int j = 0; j < arrn.length; j++) {
+            System.out.println(arrn[j]);
+        }
     }
 
     public int removeDuplicates(int[] nums) {
-        List<Integer> list = Arrays.stream(nums).boxed()
-                .distinct()
-                .collect(Collectors.toList());
-        nums = list.stream().mapToInt(i->i).toArray();
-        System.out.println(nums[0] + " " + nums[1]);
-        return nums.length;
+        int i = 0;
+        for (int n : nums)
+            if (i == 0 || n > nums[i-1])
+                nums[i++] = n;
+        return i;
     }
 }
