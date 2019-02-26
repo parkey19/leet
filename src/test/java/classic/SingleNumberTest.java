@@ -19,6 +19,8 @@ public class SingleNumberTest {
 
         int[] nums2 = {4,1,2,1,2};
         assertThat(singleNumber.singleNumber(nums2)).isEqualTo(4);
+        int[] nums3 = {17,12,5,-6,12,4,17,-5,2,-3,2,4,5,16,-3,-4,15,15,-4,-5,-6};
+        assertThat(singleNumber.singleNumber(nums3)).isEqualTo(16);
     }
 
 }
