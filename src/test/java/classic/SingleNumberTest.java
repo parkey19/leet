@@ -23,4 +23,17 @@ public class SingleNumberTest {
         assertThat(singleNumber.singleNumber(nums3)).isEqualTo(16);
     }
 
+    @Test
+    public void singleNumber2() {
+        SingleNumber singleNumber = new SingleNumber();
+        int[] num = {1,1,2};
+        assertThat(singleNumber.singleNumber2(num)).isEqualTo(2);
+    }
+
+    @Test
+    public void test() {
+        System.out.println(Integer.toBinaryString(1));
+        System.out.println(Integer.toBinaryString(2));
+    }
+
 }
