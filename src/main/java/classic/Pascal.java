@@ -11,6 +11,7 @@ public class Pascal {
     public List<List<Integer>> generate(int numRows) {
 
         ArrayList<List<Integer>> lists = new ArrayList<>(numRows);
+        if (numRows == 0) return lists;
         List<Integer> first = Arrays.asList(1);
         lists.add(first);
         if (numRows == 1) {
