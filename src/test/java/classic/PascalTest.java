@@ -15,14 +15,14 @@ public class PascalTest {
     public void generate() throws Exception {
         Pascal pascal = new Pascal();
 
-        List<List<Integer>> generate3 = pascal.generate(3);
-        assertThat(generate3.get(2)).contains(1,2,1);
+        List<List<Integer>> generate = pascal.generate(5);
+        assertThat(generate.get(1)).contains(1,1);
 
-        List<List<Integer>> generate4 = pascal.generate(4);
-        assertThat(generate4.get(3)).contains(1,3,3,1);
+        assertThat(generate.get(2)).contains(1,2,1);
 
-        List<List<Integer>> generate5 = pascal.generate(5);
-        assertThat(generate5.get(4)).contains(1,4,6,4,1);
+        assertThat(generate.get(3)).contains(1,3,3,1);
+
+        assertThat(generate.get(4)).contains(1,4,6,4,1);
     }
 
 }
