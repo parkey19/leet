@@ -14,15 +14,18 @@ public class ReverseIntegerTest {
     @Test
     public void reverse() throws Exception {
         ReverseInteger reverseInteger = new ReverseInteger();
-//        assertThat(reverseInteger.reverse(-123)).isEqualTo(-321);
-//        assertThat(reverseInteger.reverse(120)).isEqualTo(21);
-//        assertThat(reverseInteger.reverse(123)).isEqualTo(321);
+        assertThat(reverseInteger.reverse(-123)).isEqualTo(-321);
+        assertThat(reverseInteger.reverse(120)).isEqualTo(21);
+        assertThat(reverseInteger.reverse(123)).isEqualTo(321);
         assertThat(reverseInteger.reverse(1534236469)).isEqualTo(0);
+        assertThat(reverseInteger.reverse(-2147483648)).isEqualTo(0);
     }
 
     @Test
     public void test() {
 //        System.out.println(BigInteger.valueOf() "9646324351"));
+        //-2147483648
+        System.out.println(Integer.MIN_VALUE);
     }
 
 }
