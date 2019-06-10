@@ -7,10 +7,11 @@ public class PrimeNumber {
         upgradePrime();
     }
 
-    static void brutePrime(){
+    static void brutePrime() {
+        long s = System.nanoTime();
         int counter = 0;
 
-        for (int n = 2; n < 10; n++) {
+        for (int n = 2; n < 1000; n++) {
             int i;
             for (i = 2; i < n; i++) {
                 counter++;
@@ -23,16 +24,19 @@ public class PrimeNumber {
             }
 
         }
+        long e = System.nanoTime();
+        System.out.println(e-s);
     }
 
     static void upgradePrime(){
+        long s = System.nanoTime();
         int counter = 0;
         int ptr = 0;
         int[] prime = new int[500];
 
         prime[ptr++] = 2;
 
-        for (int n = 3; n <= 10; n+=2) {
+        for (int n = 3; n <= 1000; n+=2) {
             int i;
             for (i = 0; i < ptr; i++) {
                 counter++;
@@ -50,5 +54,7 @@ public class PrimeNumber {
             System.out.println(prime[i]);
         }
 
+        long e = System.nanoTime();
+        System.out.println(e-s);
     }
 }
