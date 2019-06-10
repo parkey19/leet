@@ -3,6 +3,7 @@ package basic.ch2;
 public class PrimeNumber {
 
     public static void main(String[] args) {
+        brutePrime();
         upgradePrime();
     }
 
