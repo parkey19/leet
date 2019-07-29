@@ -1,4 +1,4 @@
-package java9.ch04;
+package java9.ch05;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -26,6 +26,7 @@ public class ProxyTest {
     }
 
     public static void main(String[] args) {
+//        Class.forName(String.class);
         Object[] obj = ProxyTest.createObj();
 
         Arrays.binarySearch(obj, new Integer(500));
