@@ -36,6 +36,5 @@ public class Practice {
 
         integers.stream().forEach(System.out::println);
 
-
     }
 }
