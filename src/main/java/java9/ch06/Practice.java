@@ -3,6 +3,7 @@ package java9.ch06;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 /**
  * Created by parkey19 on 2019. 7. 31..
@@ -21,6 +22,18 @@ public class Practice {
         destination.addAll(source);
     }
 
+    public static <T extends Throwable> void throwAs(Throwable e) throws T {
+        throw (T) e;
+    }
+
+    public static <V> V doWork(Callable<V> c) {
+        try {
+            return c.call();
+        } catch (Throwable ex) {
+            Practice.throwAs(ex);
+            return null;
+        }
+    }
     public static void main(String[] args) {
 
 //        Double[] result = Practice.swap(0,1, 1, 2);
@@ -35,6 +48,20 @@ public class Practice {
         Practice.append2(integers, doubles);
 
         integers.stream().forEach(System.out::println);
+
+        Ch6_2 ch6_2 = new Ch6_2();
+        Ch6_2.StackEA<String> objectStackEA = ch6_2.new StackEA<>(10);
+        objectStackEA.push("a");
+
+        String pop = objectStackEA.pop();
+        System.out.println(pop);
+
+        Ch6_2.StackOA<String> objectStackOA = ch6_2.new StackOA<>(10);
+        objectStackOA.push("b");
+
+        String pop2 = objectStackOA.pop();
+        System.out.println(pop2);
+
 
     }
 }
