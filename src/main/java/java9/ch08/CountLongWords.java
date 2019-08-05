@@ -1,12 +1,11 @@
 package java9.ch08;
 
-import java.util.List;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Timer;
+import java.util.List;
 
 /**
  * Created by parkey19 on 2019. 8. 2..
