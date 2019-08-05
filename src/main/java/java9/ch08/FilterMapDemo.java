@@ -52,6 +52,10 @@ public class FilterMapDemo {
         Stream<String> letters = Stream.of(song).flatMap(w -> codePoints(w));
         show("letters", letters);
 
-
+        Stream.iterate(1.0, p -> p *2)
+                .peek(e -> {
+                    System.out.println("f :" + e);
+                    return;
+                }).limit(20).toArray();
     }
 }
