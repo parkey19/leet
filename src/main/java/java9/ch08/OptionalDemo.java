@@ -133,7 +133,7 @@ public class OptionalDemo {
                 id -> Stream.ofNullable(Users.classicLookup(id)));
         show("users", users);
 
-        ids = Stream.of("gboole", "jgosling");
+        ids = Stream.of("jgosling");
         users = ids.map(Users::classicLookup)
                 .flatMap(Stream::ofNullable);
         show("users", users);
