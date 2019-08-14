@@ -58,9 +58,9 @@ public class DownstreamCollectors {
 //        System.out.println("countryToLocaleCounts: " + countryToLocaleCounts);
 
         Stream<City> cities = readCities("cities.txt");
-//        Map<String, Integer> stateToCityPopulation = cities.collect(
-//                groupingBy(City::getState, summingInt(City::getPopulation)));
-//        System.out.println("stateToCityPopulation: " + stateToCityPopulation);
+        Map<String, Integer> stateToCityPopulation = cities.collect(
+                groupingBy(City::getState, summingInt(City::getPopulation)));
+        System.out.println("stateToCityPopulation: " + stateToCityPopulation);
 //
 //        cities = readCities("cities.txt");
 //        Map<String, Optional<City>> stateToLargestCity = cities.collect(
@@ -100,23 +100,23 @@ public class DownstreamCollectors {
 //
 //        System.out.println("largeCitiesByState: " + largeCitiesByState);
 //
-        cities = readCities("cities.txt");
-        Map<String, IntSummaryStatistics> stateToCityPopulationSummary = cities.collect(
-                groupingBy(City::getState,
-                        summarizingInt(City::getPopulation)));
-        System.out.println(stateToCityPopulationSummary.get("NY"));
-
-        cities = readCities("cities.txt");
-        Map<String, String> stateToCityNames = cities.collect(
-                groupingBy(City::getState,
-                        reducing("", City::getName,
-                                (s, t) -> s.length() == 0 ? t : s + ", " + t)));
-
-        cities = readCities("cities.txt");
-        stateToCityNames = cities.collect(
-                groupingBy(City::getState,
-                        mapping(City::getName,
-                                joining(", "))));
-        System.out.println("stateToCityNames: " + stateToCityNames);
+//        cities = readCities("cities.txt");
+//        Map<String, IntSummaryStatistics> stateToCityPopulationSummary = cities.collect(
+//                groupingBy(City::getState,
+//                        summarizingInt(City::getPopulation)));
+//        System.out.println(stateToCityPopulationSummary.get("NY"));
+//
+//        cities = readCities("cities.txt");
+//        Map<String, String> stateToCityNames = cities.collect(
+//                groupingBy(City::getState,
+//                        reducing("", City::getName,
+//                                (s, t) -> s.length() == 0 ? t : s + ", " + t)));
+//
+//        cities = readCities("cities.txt");
+//        stateToCityNames = cities.collect(
+//                groupingBy(City::getState,
+//                        mapping(City::getName,
+//                                joining(", "))));
+//        System.out.println("stateToCityNames: " + stateToCityNames);
     }
 }
