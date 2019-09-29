@@ -25,16 +25,16 @@ class Node {
 public class PreOrder {
     public static List<Integer> cycle(Node root) {
         List<Integer> ret = new ArrayList<>();
-        travalsal(root, ret);
+        traverse(root, ret);
         System.out.println(ret.stream().map(i->i.toString()).collect(Collectors.joining(",")));
         return ret;
     }
 
-    public static void travalsal(Node node, List<Integer> ret) {
+    public static void traverse(Node node, List<Integer> ret) {
         if (node == null) return;
         ret.add(node.val);
         for (Node n: node.children) {
-            travalsal(n, ret);
+            traverse(n, ret);
         }
 
     }
