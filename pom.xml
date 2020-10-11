@@ -33,6 +33,7 @@
                     <source>1.9</source>
                     <target>1.9</target>
                     <encoding>UTF-8</encoding>
+                    <compilerArgument>--add-modules=jdk.incubator.httpclient</compilerArgument>
                 </configuration>
             </plugin>
 
